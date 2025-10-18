@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelly Lenge - Marketing & Communications Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #ec4899;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 4rem;
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* Home Section */
+        #home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 2rem;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Video Section */
+        .video-container {
+            margin: 2rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            background: var(--gray);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-photo {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background: var(--light);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        /* Resume Section */
+        #resume {
+            background: white;
+        }
+
+        .resume-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .resume-item {
+            margin: 1.5rem 0;
+        }
+
+        .resume-item h4 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-item .date {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        /* Blog Section */
+        #blog {
+            background: var(--light);
+        }
+
+        .blog-post {
+            background: white;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .blog-post h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-meta {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin: 3rem 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary);
+        }
+
+        .external-links {
+            margin: 3rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .external-link {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .external-link:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling effect */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Kelly Lenge</div>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#about" onclick="showSection('about')">About</a></li>
+                <li><a href="#portfolio" onclick="showSection('portfolio')">Portfolio</a></li>
+                <li><a href="#resume" onclick="showSection('resume')">Resume</a></li>
+                <li><a href="#blog" onclick="showSection('blog')">Blog</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="active">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-photo">
+                    [Add your high-quality professional headshot here - kelly-lenge-headshot.jpg]
+                </div>
+                <h1>Kelly Lenge</h1>
+                <p style="font-size: 1.5rem; margin-bottom: 1rem;">Marketing Professional | Communications Specialist</p>
+                <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">BBA in Marketing | Minor in Communications</p>
+                
+                <a href="#contact" onclick="showSection('contact')" class="cta-button">Let's Connect!</a>
+                
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">🔗 LinkedIn</a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram">📷 Instagram</a>
+                    <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter">🐦 Twitter</a>
+                </div>
+
+                <div class="video-container" style="margin-top: 3rem;">
+                    [Embed your 1-minute personal introduction video here]<br>
+                    Use: &lt;iframe width="100%" height="400" src="YOUR_VIDEO_URL"&gt;&lt;/iframe&gt;
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Welcome! I'm Kelly Lenge, a passionate marketing professional with a strong foundation in communications. With my BBA in Marketing and minor in Communications, I bring a unique blend of strategic thinking and creative storytelling to every project.</p>
+                    
+                    <p>My journey in marketing began with a fascination for how brands connect with people on an emotional level. I believe that effective marketing is about building relationships, telling authentic stories, and creating meaningful experiences that resonate with audiences.</p>
+                    
+                    <p>Throughout my academic career and professional experiences, I've developed expertise in digital marketing, brand strategy, content creation, and social media management. I'm always eager to learn new skills and stay ahead of industry trends.</p>
+                    
+                    <p>When I'm not crafting marketing campaigns, you can find me exploring new creative outlets, staying active in my community, and continuously seeking inspiration from the world around me.</p>
+                </div>
+                <div class="about-photo">
+                    [Add a professional photo of yourself here - kelly-lenge-about.jpg]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>My Portfolio</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Here's a showcase of my best work in marketing and communications. Each project represents my commitment to creativity, strategy, and results.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">[Add project image - marketing-campaign-1.jpg]</div>
+                    <div class="portfolio-content">
+                        <h3>Social Media Campaign</h3>
+                        <p>Developed and executed a comprehensive social media strategy that increased engagement by 150% and grew follower base significantly. Utilized data analytics to optimize content performance.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">[Add project image - branding-project-1.jpg]</div>
+                    <div class="portfolio-content">
+                        <h3>Brand Development Project</h3>
+                        <p>Led a complete brand refresh including logo design, brand guidelines, and messaging strategy. Created a cohesive brand identity that resonated with target demographics.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">[Add project image - content-strategy.jpg]</div>
+                    <div class="portfolio-content">
+                        <h3>Content Marketing Strategy</h3>
+                        <p>Designed and implemented a content marketing plan that drove organic traffic and improved conversion rates. Focused on SEO optimization and audience engagement.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">[Add project image - event-marketing.jpg]</div>
+                    <div class="portfolio-content">
+                        <h3>Event Marketing Campaign</h3>
+                        <p>Coordinated a multi-channel marketing campaign for a major event, including email marketing, social media promotion, and influencer partnerships.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">[Add project image - digital-ads.jpg]</div>
+                    <div class="portfolio-content">
+                        <h3>Digital Advertising Campaign</h3>
+                        <p>Created and managed paid advertising campaigns across multiple platforms, optimizing for ROI and reaching target audiences effectively.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">[Add project image - market-research.jpg]</div>
+                    <div class="portfolio-content">
+                        <h3>Market Research Project</h3>
+                        <p>Conducted comprehensive market research and competitive analysis to inform strategic marketing decisions and identify growth opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESUME SECTION -->
+    <section id="resume">
+        <div class="container">
+            <h2>Resume / CV</h2>
+            
+            <div class="resume-section">
+                <h3>Education</h3>
+                <div class="resume-item">
+                    <h4>Bachelor of Business Administration (BBA) - Marketing</h4>
+                    <p class="date">[Your University] | [Graduation Year]</p>
+                    <p>Minor in Communications</p>
+                    <p>Relevant Coursework: Digital Marketing, Consumer Behavior, Brand Management, Marketing Analytics, Public Relations, Social Media Strategy, Integrated Marketing Communications</p>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Professional Experience</h3>
+                <div class="resume-item">
+                    <h4>Marketing Intern</h4>
+                    <p class="date">[Company Name] | [Dates]</p>
+                    <p>• Assisted in developing and executing marketing campaigns across multiple channels</p>
+                    <p>• Managed social media accounts and created engaging content</p>
+                    <p>• Conducted market research and analyzed consumer insights</p>
+                    <p>• Collaborated with cross-functional teams to achieve marketing objectives</p>
+                </div>
+                <div class="resume-item">
+                    <h4>Communications Assistant</h4>
+                    <p class="date">[Company/Organization] | [Dates]</p>
+                    <p>• Created compelling content for various communication platforms</p>
+                    <p>• Coordinated internal and external communications initiatives</p>
+                    <p>• Supported event planning and promotion efforts</p>
+                    <p>• Maintained brand consistency across all materials</p>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Skills</h3>
+                <div class="skills">
+                    <span class="skill-tag">Digital Marketing</span>
+                    <span class="skill-tag">Social Media Management</span>
+                    <span class="skill-tag">Content Creation</span>
+                    <span class="skill-tag">Brand Strategy</span>
+                    <span class="skill-tag">SEO/SEM</span>
+                    <span class="skill-tag">Google Analytics</span>
+                    <span class="skill-tag">Adobe Creative Suite</span>
+                    <span class="skill-tag">Email Marketing</span>
+                    <span class="skill-tag">Market Research</span>
+                    <span class="skill-tag">Public Relations</span>
+                    <span class="skill-tag">Copywriting</span>
+                    <span class="skill-tag">Project Management</span>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Certifications & Awards</h3>
+                <div class="resume-item">
+                    <h4>[Add any relevant certifications]</h4>
+                    <p>• Google Analytics Certification</p>
+                    <p>• HubSpot Content Marketing Certification</p>
+                    <p>• Facebook Blueprint Certification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section id="blog">
+        <div class="container">
+            <h2>My Blog</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Insights, thoughts, and observations on marketing, communications, and professional growth.</p>
+
+            <article class="blog-post">
+                <h3>The Future of Digital Marketing: Trends to Watch in 2025</h3>
+                <p class="blog-meta">Posted on [Date] | Marketing Insights</p>
+                <div class="blog-image">[Add blog featured image - digital-marketing-trends.jpg]</div>
+                <p>Digital marketing is evolving at an unprecedented pace, and staying ahead of the curve is essential for any marketing professional. As we navigate through 2025, several key trends are reshaping how brands connect with their audiences and drive meaningful engagement.</p>
+
+                <p>First and foremost, artificial intelligence and machine learning have become integral to marketing strategy. From predictive analytics that help us understand consumer behavior to AI-powered chatbots that enhance customer service, these technologies are no longer optional—they're essential. I've personally witnessed how AI tools can analyze vast amounts of data in seconds, providing insights that would take humans weeks to uncover. This doesn't mean human creativity is being replaced; rather, it's being amplified. Marketers can now focus on strategy and creative thinking while AI handles the heavy lifting of data analysis and optimization.</p>
+
+                <p>Personalization has reached new heights. Consumers no longer respond to generic messaging; they expect brands to understand their unique needs, preferences, and behaviors. The brands winning today are those creating hyper-personalized experiences across every touchpoint. This means leveraging data responsibly and ethically to deliver content that resonates on an individual level. In my own work, I've seen how personalized email campaigns can achieve open rates three times higher than generic broadcasts.</p>
+
+                <p>Video content continues to dominate, but the format is evolving. Short-form video on platforms like TikTok and Instagram Reels has changed how we consume content. Brands must adapt by creating authentic, engaging content that captures attention within the first three seconds. The days of polished, overly-produced content are giving way to raw, genuine storytelling that feels human and relatable. This shift has been liberating for marketers—we can be more experimental and authentic without the pressure of perfection.</p>
+
+                <p>Social commerce is transforming the customer journey. The line between social media and e-commerce is blurring, with platforms introducing seamless shopping experiences. Consumers can now discover products, read reviews, and make purchases without ever leaving their favorite social app. This integration requires marketers to rethink their strategies, ensuring that every social post is not just engaging but also shoppable.</p>
+
+                <p>Sustainability and social responsibility have moved from nice-to-have to must-have. Today's consumers, especially Gen Z and Millennials, demand that brands take stands on social issues and demonstrate genuine commitment to sustainability. Marketing messages that ring hollow or appear performative are quickly called out. Authenticity is currency in modern marketing.</p>
+
+                <p>Voice search and smart speakers are changing SEO strategies. With more people using voice assistants, content must be optimized for conversational queries. This means focusing on natural language, question-based content, and local SEO. The way people speak their searches differs significantly from how they type them, requiring a new approach to keyword research and content creation.</p>
+
+                <p>Finally, the metaverse and Web3 technologies are opening new frontiers for marketing. While still emerging, these technologies offer exciting possibilities for immersive brand experiences. Forward-thinking marketers are already experimenting with virtual events, NFTs, and branded experiences in virtual worlds.</p>
+
+                <p>As marketing professionals, our role is to stay curious, keep learning, and be willing to experiment. The trends shaping 2025 aren't just about technology—they're about understanding human behavior, building genuine connections, and creating value for audiences. The future of marketing is bright for those willing to embrace change and put the customer at the center of everything we do.</p>
+            </article>
+
+            <article class="blog-post">
+                <h3>Building Your Personal Brand: Lessons from My Journey</h3>
+                <p class="blog-meta">Posted on [Date] | Career Development</p>
+                <div class="blog-image">[Add blog featured image - personal-branding.jpg]</div>
+                <p>Personal branding isn't about creating a fake persona or becoming someone you're not. It's about authentically showcasing who you are, what you stand for, and the unique value you bring to the table. Through my journey as a marketing professional, I've learned that building a strong personal brand is one of the most valuable investments you can make in your career.</p>
+
+                <p>When I first started thinking about my personal brand, I was overwhelmed. There were so many voices telling me what I should be, how I should present myself, and which platforms I should use. The breakthrough came when I realized that authenticity is the foundation of any successful personal brand. You can't sustain a brand built on pretense—eventually, the facade cracks. Instead, I focused on understanding my core values, strengths, and passions, and building my brand around those authentic elements.</p>
+
+                <p>One of the first steps in my personal branding journey was defining my unique value proposition. What makes me different from other marketing professionals? What perspective do I bring that others don't? For me, it was the intersection of strategic marketing thinking and strong communication skills. My background in both marketing and communications allows me to see the bigger picture while also crafting compelling narratives. This unique combination became the cornerstone of my personal brand.</p>
+
+                <p>Consistency has been crucial. Your personal brand isn't just what you post on LinkedIn or how you present yourself in interviews—it's the sum total of every interaction, every piece of content you create, and every professional relationship you build. I've made it a priority to ensure that my online presence aligns with how I show up in person. This means being thoughtful about what I share on social media, how I engage with others online, and the quality of work I produce.</p>
+
+                <p>Content creation has played a significant role in building my brand. By sharing my insights, experiences, and learnings, I've been able to establish thought leadership in my areas of expertise. This doesn't mean you need to be an expert in everything—in fact, being vulnerable about what you're learning can be just as powerful as showcasing what you know. I've found that people appreciate honesty and genuine curiosity over false expertise.</p>
+
+                <p>Networking authentically has also been transformative. Rather than viewing networking as a transactional activity, I've approached it as relationship-building. I genuinely seek to learn from others, offer help where I can, and build meaningful connections. This mindset shift has led to some of the most valuable relationships in my career. Your network is an extension of your personal brand—the people you associate with and how you treat them says a lot about who you are.</p>
+
+                <p>Visual identity matters more than I initially realized. From the colors I use in my presentations to the style of my professional photos, these visual elements create immediate impressions. I've invested time in developing a cohesive visual identity that reflects my personality—professional yet approachable, creative yet strategic. This visual consistency helps people recognize my work and associate it with quality.</p>
+
+                <p>One challenge I've faced is balancing professionalism with personality. Early on, I was afraid to show too much personality for fear of appearing unprofessional. But I've learned that people connect with people, not corporate robots. Sharing appropriate personal stories, showing enthusiasm for my work, and letting my personality shine through has made my brand more relatable and memorable. The key is finding the right balance for your industry and comfort level.</p>
+
+                <p>Continuous learning and evolution are essential. The marketing landscape changes rapidly, and staying relevant means constantly updating your skills and knowledge. I've made professional development a priority, pursuing certifications, attending conferences, and staying current with industry trends. This commitment to growth is now part of my brand identity—I'm known as someone who stays ahead of the curve.</p>
+
+                <p>Finally, I've learned to measure and refine my personal brand over time. This means paying attention to feedback, analyzing what resonates with my audience, and being willing to adjust my approach. Personal branding isn't set in stone—it evolves as you grow and as your career develops. The brand I'm building today will continue to mature and change, and that's exactly as it should be.</p>
+
+                <p>Building a personal brand is a marathon, not a sprint. It requires patience, authenticity, and consistent effort. But the rewards—increased opportunities, meaningful connections, and a clear professional identity—make it absolutely worth the investment. My advice? Start where you are, be genuine, and don't be afraid to let your unique voice shine through.</p>
+            </article>
+
+            <article class="blog-post">
+                <h3>Effective Communication in the Digital Age</h3>
+                <p class="blog-meta">Posted on [Date] | Communications</p>
+                <div class="blog-image">[Add blog featured image - digital-communication.jpg]</div>
+                <p>In our hyper-connected world, communication has never been easier—yet truly effective communication seems increasingly rare. As someone with a background in both marketing and communications, I've spent considerable time thinking about what makes communication effective in the digital age and how we can cut through the noise to create meaningful connections.</p>
+
+                <p>The paradox of digital communication is that while we have more channels and tools than ever before, we often struggle to be truly heard and understood. We're sending messages constantly—emails, texts, social media posts, instant messages—but are we actually communicating? There's a crucial difference between transmitting information and creating understanding, and that difference has become even more pronounced in the digital realm.</p>
+
+                <p>One of the biggest challenges in digital communication is the loss of nonverbal cues. When we communicate face-to-face, we rely heavily on body language, facial expressions, and tone of voice to convey meaning and emotion. These cues are largely absent in written digital communication, leading to frequent misunderstandings. I've learned to compensate for this by being more intentional with my word choices, using formatting to add emphasis, and sometimes opting for video calls when nuance is important. An emoji here and there doesn't hurt either—they serve as our digital body language.</p>
+
+                <p>Clarity has become my guiding principle in digital communication. In a world where everyone is overwhelmed with information, getting to the point quickly and clearly is respectful of others' time and attention. This doesn't mean being blunt or impersonal—it means being thoughtful about what you're communicating and how you structure your message. I've adopted a "bottom line up front" approach for most professional communications, stating the main point or call to action early, then providing supporting details for those who need them.</p>
+
+                <p>The medium matters tremendously. Each communication channel has its own norms, expectations, and appropriate use cases. Email is great for formal communication and when you need a paper trail. Instant messaging works well for quick questions and team coordination. Social media is ideal for broad announcements and community engagement. Video calls excel at nuanced discussions and relationship building. Understanding which medium to use for which message is a crucial skill that many people overlook.</p>
+
+                <p>Active listening—or rather, active reading—is just as important in digital communication as it is in person. Too often, we skim messages quickly, formulate our response before fully understanding the question, and miss important context. I've made it a practice to read carefully, consider the sender's perspective, and sometimes wait before responding to ensure I'm addressing what was actually asked rather than what I assumed was being asked.</p>
+
+                <p>Timing and frequency also play significant roles in effective digital communication. Sending too many messages can overwhelm recipients and lead to important information being missed. Sending too few can leave people feeling out of the loop. I've learned to batch related information together, use subject lines and headings effectively, and be strategic about when I send messages. A thoughtfully timed message can have far more impact than multiple poorly timed ones.</p>
+
+                <p>Cultural sensitivity has become more important as digital communication has made our world smaller. We're regularly communicating with people from different cultures, time zones, and backgrounds. What's considered direct and efficient in one culture might be seen as rude in another. I've learned to adapt my communication style based on my audience, be patient with language barriers, and always assume positive intent when messages feel unclear or abrupt.</p>
+
+                <p>Perhaps most importantly, I've learned that effective digital communication requires empathy. Behind every screen is a real person with their own context, challenges, and emotions. Taking a moment to consider how your message will be received, acknowledging others' perspectives, and communicating with kindness and respect can transform your digital interactions from transactional to meaningful.</p>
+
+                <p>The digital age hasn't made communication easier—it's made it more complex. But by being intentional, clear, empathetic, and strategic in how we communicate, we can harness the power of digital tools to build stronger relationships, collaborate more effectively, and create genuine understanding. Communication is at the heart of everything we do professionally and personally, and mastering it in the digital realm is one of the most valuable skills we can develop.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p style="font-size: 1.2rem; margin: 2rem 0;">I'm always excited to connect with fellow marketing professionals, potential collaborators, and anyone interested in discussing marketing and communications!</p>
+            
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:kelly.lenge@email.com">kelly.lenge@email.com</a></p>
+                <p style="margin-top: 1rem;"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kellylenge" target="_blank">linkedin.com/in/kellylenge</a></p>
+            </div>
+
+            <div style="margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 15px; color: white;">
+                <h3 style="color: white; margin-bottom: 1rem;">Ready to Collaborate?</h3>
+                <p style="font-size: 1.1rem;">Whether you're looking for a marketing professional to join your team, need consultation on a project, or just want to chat about the latest marketing trends, I'd love to hear from you!</p>
+                <a href="mailto:kelly.lenge@email.com" class="cta-button" style="background: white; color: var(--primary); margin-top: 1.5rem;">Get In Touch</a>
+            </div>
+
+            <h3 style="margin-top: 3rem;">Helpful Resources</h3>
+            <div class="external-links">
+                <a href="https://www.hubspot.com/marketing-statistics" target="_blank" class="external-link">Marketing Statistics Hub</a>
+                <a href="https://www.ama.org/" target="_blank" class="external-link">American Marketing Association</a>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: var(--light); border-radius: 15px;">
+                <h3>Follow My Journey</h3>
+                <p>Stay updated with my latest projects, insights, and professional adventures on social media.</p>
+                <div class="social-links" style="margin-top: 1.5rem;">
+                    <a href="https://linkedin.com/in/kellylenge" target="_blank" style="color: var(--primary);">🔗 LinkedIn</a>
+                    <a href="https://instagram.com/kellylenge" target="_blank" style="color: var(--accent);">📷 Instagram</a>
+                    <a href="https://twitter.com/kellylenge" target="_blank" style="color: var(--primary);">🐦 Twitter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+            
+            return false;
+        }
+
+        // Handle initial page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.slice(1);
+            if (hash) {
+                showSection(hash);
+            } else {
+                showSection('home');
+            }
+        });
+
+        // Update URL hash when section changes
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = e.target.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    window.location.hash = href;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
