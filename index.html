@@ -183,23 +183,6 @@
             overflow: hidden;
         }
 
-        #home::before {
-            content: '✨';
-            position: absolute;
-            font-size: 3rem;
-            top: 20%;
-            left: 10%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        #home::after {
-            content: '🌸';
-            position: absolute;
-            font-size: 2.5rem;
-            bottom: 20%;
-            right: 15%;
-            animation: float 5s ease-in-out infinite;
-        }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -231,14 +214,15 @@
             box-shadow: 0 15px 60px rgba(180, 145, 200, 0.4);
             margin: 0 auto 2rem;
             background: linear-gradient(135deg, var(--lavender-light), var(--lavender));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            text-align: center;
-            padding: 2rem;
+            /* remove inner padding so image can fill the circle */
+            display: block;
+            overflow: hidden;
             transition: transform 0.3s;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            display: block; /* remove inline gaps */
         }
 
         .profile-photo:hover {
@@ -290,6 +274,13 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 5px 20px rgba(180, 145, 200, 0.3);
+        }
+
+        /* size for social icon images */
+        .social-links a img {
+            width: 36px;
+            height: 36px;
+            display: block;
         }
 
         .social-links a:hover {
@@ -673,7 +664,7 @@
 <body>
     <nav>
         <div class="container">
-            <div class="logo" onclick="showPage('home')">Kelly Lenge <span class="sparkle">✨</span></div>
+            <div class="logo" onclick="showPage('home')">Kelly Lenge <span class="sparkle"></span></div>
             <ul>
                 <li><a href="#home" onclick="showPage('home')">Home</a></li>
                 <li><a href="#about" onclick="showPage('about')">About</a></li>
@@ -690,18 +681,17 @@
         <div class="container">
             <div class="hero-content">
                 <div class="profile-photo">
-                    [Add your high-quality professional headshot here - kelly-lenge-headshot.jpg]
+                    <img src="Screenshot 2025-10-18 at 8.28.31 PM.jpeg" alt="Kelly Lenge" />
                 </div>
                 <h1>Kelly Lenge</h1>
-                <p class="tagline">Marketing Maven & Communications Expert</p>
                 <p style="font-size: 1.3rem; margin-bottom: 1rem; font-weight: 500;">BBA in Marketing | Minor in Communications</p>
                 
                 <a href="#contact" onclick="showPage('contact')" class="cta-button">Let's Connect! 💜</a>
                 
                 <div class="social-links">
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">🔗</a>
-                    <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram">📷</a>
-                    <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter">🐦</a>
+                    <a href="https://linkedin.com/in/kellylenge" target="_blank" title="LinkedIn" aria-label="LinkedIn profile">
+                        <img src="LinkedIn_icon.svg.png" alt="LinkedIn" />
+                    </a>
                 </div>
 
                 <div class="video-container">
@@ -946,29 +936,29 @@
             <p style="font-size: 1.2rem; margin: 2rem 0;">I'm always excited to connect with fellow marketing professionals, potential collaborators, and anyone interested in discussing marketing and communications!</p>
             
             <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:kelly.lenge@email.com">kelly.lenge@email.com</a></p>
+                <p><strong>Email:</strong> <a href="mailto:kellyalenge@email.com">kellyalenge@email.com</a></p>
                 <p style="margin-top: 1rem;"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kellylenge" target="_blank">linkedin.com/in/kellylenge</a></p>
             </div>
 
-            <div class="contact-cta-box">
+            <!-- <div class="contact-cta-box">
                 <h3>Ready to Collaborate? 🌟</h3>
                 <p style="font-size: 1.15rem;">Whether you're looking for a marketing professional to join your team, need consultation on a project, or just want to chat about the latest marketing trends, I'd love to hear from you!</p>
-                <a href="mailto:kelly.lenge@email.com" class="cta-button" style="background: white; color: var(--lavender-dark); margin-top: 1.5rem;">Get In Touch</a>
-            </div>
+                <a href="mailto:kellyalenge@email.com" class="cta-button" style="background: white; color: var(--lavender-dark); margin-top: 1.5rem;">Get In Touch</a>
+            </div> -->
 
-            <h3 style="margin-top: 3rem; color: var(--lavender-dark);">Helpful Resources 📚</h3>
+            <!-- <h3 style="margin-top: 3rem; color: var(--lavender-dark);">Helpful Resources 📚</h3>
             <div class="external-links">
                 <a href="https://www.hubspot.com/marketing-statistics" target="_blank" class="external-link">Marketing Statistics Hub</a>
                 <a href="https://www.ama.org/" target="_blank" class="external-link">American Marketing Association</a>
-            </div>
+            </div> -->
 
             <div class="follow-section">
                 <h3>Follow My Journey ✨</h3>
-                <p style="color: var(--text-gray);">Stay updated with my latest projects, insights, and professional adventures on social media.</p>
+                <p style="color: var(--text-gray);">Stay updated with my latest projects, insights, and professional adventures on LinkedIn.</p>
                 <div class="social-links" style="margin-top: 1.5rem;">
-                    <a href="https://linkedin.com/in/kellylenge" target="_blank">🔗</a>
-                    <a href="https://instagram.com/kellylenge" target="_blank">📷</a>
-                    <a href="https://twitter.com/kellylenge" target="_blank">🐦</a>
+                    <a href="https://linkedin.com/in/kellylenge" target="_blank" title="LinkedIn" aria-label="LinkedIn profile">
+                        <img src="LinkedIn_icon.svg.png" alt="LinkedIn" />
+                    </a>
                 </div>
             </div>
         </div>
