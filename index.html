@@ -335,10 +335,10 @@
                 transform: translateX(0);
             }
         }
-
+        
         .about-photo {
             width: 100%;
-            min-height: 420px;
+            height: 500px;
             border-radius: 25px;
             background: linear-gradient(135deg, var(--lavender-light), var(--lavender));
             display: flex;
@@ -347,19 +347,18 @@
             color: white;
             font-size: 1rem;
             text-align: center;
-            padding: 2rem;
+            padding: 0;
+            overflow: hidden;
             box-shadow: 0 15px 50px rgba(180, 145, 200, 0.3);
-            border: 5px solid white;
+            border: 15px solid #d4bbe8;
             animation: slideInRight 0.8s ease;
         }
 
         .about-photo img {
-            display: block;
             width: 100%;
-            max-width: 320px;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(45, 27, 61, 0.15);
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         @keyframes slideInRight {
@@ -546,6 +545,23 @@
             box-shadow: 0 8px 30px rgba(180, 145, 200, 0.3);
         }
 
+        .blog-image.gallery {
+            height: auto;
+            padding: 1.5rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .blog-image.gallery img {
+            flex: 1 1 200px;
+            max-width: 220px;
+            min-width: 160px;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(45, 27, 61, 0.15);
+        }
+
         .blog-post p {
             margin-bottom: 1.5rem;
             font-size: 1.05rem;
@@ -726,7 +742,7 @@
                     <p>Outside of school, I enjoy traveling, staying active, and spending time with friends and family. I value experiences that challenge me, teach me something new, and help me grow as a person. As I continue my journey, I hope to build a career where I can bring ideas to life, connect with others, and make a positive difference through creativity and marketing.</p>
                 </div>
                 <div class="about-photo">
-                    <img src="img/IMG_5795.jpg" alt="Kelly Lenge" style="width: 320px; height: 420px; object-fit: cover; border-radius: 20px;" />
+                    <img src="img/photo kelly.jpg" alt="Kelly Lenge" />
                 </div>
             </div>
         </div>
@@ -760,30 +776,6 @@
                     <div class="portfolio-content">
                         <h3>Content Marketing Strategy</h3>
                         <p>Designed and implemented a content marketing plan that drove organic traffic and improved conversion rates. Focused on SEO optimization and audience engagement.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <div class="portfolio-image">[Add project image - event-marketing.jpg]</div>
-                    <div class="portfolio-content">
-                        <h3>Event Marketing Campaign</h3>
-                        <p>Coordinated a multi-channel marketing campaign for a major event, including email marketing, social media promotion, and influencer partnerships.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <div class="portfolio-image">[Add project image - digital-ads.jpg]</div>
-                    <div class="portfolio-content">
-                        <h3>Digital Advertising Campaign</h3>
-                        <p>Created and managed paid advertising campaigns across multiple platforms, optimizing for ROI and reaching target audiences effectively.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <div class="portfolio-image">[Add project image - market-research.jpg]</div>
-                    <div class="portfolio-content">
-                        <h3>Market Research Project</h3>
-                        <p>Conducted comprehensive market research and competitive analysis to inform strategic marketing decisions and identify growth opportunities.</p>
                     </div>
                 </div>
             </div>
@@ -859,12 +851,17 @@
     <div id="blog" class="page">
         <div class="container">
             <h2>My Blog 💭</h2>
-            <p class="blog-intro">Insights, thoughts, and observations on marketing, communications, and professional growth.</p>
+            <!-- <p class="blog-intro">Insights, thoughts, and observations on marketing, communications, and professional growth.</p> -->
 
             <article class="blog-post">
                 <h3>Traveling</h3>
-                <p class="blog-meta">Posted on November 1, 2025 | Study Abroad</p>
-                <div class="blog-image">[Add blog featured image - digital-marketing-trends.jpg]</div>
+                <!-- <p class="blog-meta">Posted on November 1, 2025 | Study Abroad</p> -->
+                <div class="blog-image gallery">
+                    <img src="img/IMG_5796.jpg" alt="Kelly Lenge smiling in a courtyard">
+                    <img src="img/IMG_5797.jpg" alt="Street view from Barcelona study abroad trip">
+                    <img src="img/maracco.jpeg" alt="Kelly visiting Morocco archway at sunset">
+                    <img src="img/IMG_5800.jpg" alt="Sunset view from Morocco trip">
+                </div>
                 <p>Before studying abroad, I had never been outside the country. Traveling always seemed exciting, but it was not until I lived in Barcelona that I truly understood how much it could change me. The city’s vibrant energy, incredible food, and slower pace taught me to appreciate each moment instead of rushing to the next thing.</p>
 
                 <p>During that semester, I visited Morocco, Iceland, Switzerland, Florence, Dublin, Lisbon, Budapest, Madrid, Paris, and London. Each trip brought new lessons and fresh perspectives. I learned to adapt quickly, plan ahead, and stay calm when things didn’t go according to plan.</p>
@@ -876,8 +873,13 @@
 
             <article class="blog-post">
                 <h3>Dancing</h3>
-                <p class="blog-meta">Posted on October 25, 2025 | Personal Growth</p>
-                <div class="blog-image">[Add blog featured image - personal-branding.jpg]</div>
+                <!-- <p class="blog-meta">Posted on October 25, 2025 | Personal Growth</p> -->
+                <div class="blog-image gallery">
+                    <img src="img/dance2.jpeg" alt="Kelly Lenge smiling in a courtyard">
+                    <img src="img/amanda2.jpeg" alt="Kelly Lenge dancing with a partner">
+                    <img src="img/dance1.jpeg" alt="Kelly Lenge dancing in a studio">
+                    <img src="img/amanad.jpeg" alt="Sunset view from Morocco trip">
+                </div>
                 <p>I started dancing when I was four years old, and it has been a part of my life ever since. What began as a fun activity quickly became something I truly loved. I went on to dance competitively for 15 years, and over that time it shaped me into the person I am today. Dance taught me discipline, focus, and what it really means to work hard for something you care about.</p>
 
                 <p>I had amazing coaches who pushed me to be my best every single day. We spent around 40 hours a week in the studio practicing, sweating, and sometimes even crying, all working toward the same goal. It was challenging, but it taught me that success does not come without effort. You have to show up, stay consistent, and push through the tough moments to achieve something great.</p>
@@ -889,7 +891,7 @@
 
             <article class="blog-post">
                 <h3>Effective Communication in the Digital Age</h3>
-                <p class="blog-meta">Posted on September 10, 2025 | Communications</p>
+                <!-- <p class="blog-meta">Posted on September 10, 2025 | Communications</p> -->
                 <div class="blog-image">[Add blog featured image - digital-communication.jpg]</div>
                 <p>In our hyper-connected world, communication has never been easier—yet truly effective communication seems increasingly rare. As someone with a background in both marketing and communications, I've spent considerable time thinking about what makes communication effective in the digital age and how we can cut through the noise to create meaningful connections.</p>
 
@@ -921,7 +923,7 @@
             <p style="font-size: 1.2rem; margin: 2rem 0;">I'm always excited to connect with fellow marketing professionals, potential collaborators, and anyone interested in discussing marketing and communications!</p>
             
             <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:kellyalenge@email.com">kellyalenge@email.com</a></p>
+                <p><strong>Email:</strong> <a href="mailto:kellyalenge@gmail.com">kellyalenge@gmail.com</a></p>
                 <p style="margin-top: 1rem;"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kellylenge" target="_blank">linkedin.com/in/kellylenge</a></p>
             </div>
 
