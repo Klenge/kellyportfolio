@@ -338,7 +338,7 @@
 
         .about-photo {
             width: 100%;
-            height: 500px;
+            min-height: 420px;
             border-radius: 25px;
             background: linear-gradient(135deg, var(--lavender-light), var(--lavender));
             display: flex;
@@ -351,6 +351,15 @@
             box-shadow: 0 15px 50px rgba(180, 145, 200, 0.3);
             border: 5px solid white;
             animation: slideInRight 0.8s ease;
+        }
+
+        .about-photo img {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(45, 27, 61, 0.15);
         }
 
         @keyframes slideInRight {
@@ -686,7 +695,7 @@
                 <h1>Kelly Lenge</h1>
                 <p style="font-size: 1.3rem; margin-bottom: 1rem; font-weight: 500;">BBA in Marketing | Minor in Communications</p>
                 
-                <a href="#contact" onclick="showPage('contact')" class="cta-button">Let's Connect! 💜</a>
+                <a href="#contact" onclick="showPage('contact')" class="cta-button">Let's Connect!</a>
                 
                 <div class="social-links">
                     <a href="https://linkedin.com/in/kellylenge" target="_blank" title="LinkedIn" aria-label="LinkedIn profile">
@@ -705,19 +714,19 @@
     <!-- ABOUT PAGE -->
     <div id="about" class="page">
         <div class="container">
-            <h2>About Me 🌸</h2>
+            <h2>About Me</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>Welcome! I'm Kelly Lenge, a passionate marketing professional with a strong foundation in communications. With my BBA in Marketing and minor in Communications, I bring a unique blend of strategic thinking and creative storytelling to every project.</p>
+                    <p>Hi, I'm Kelly Lenge, and I'm majoring in Marketing at the University of Miami. I've always been drawn to creativity, communication, and the ways people and brands connect with others. Marketing allows me to combine those passions while learning how to turn ideas into meaningful stories that inspire people.</p>
                     
-                    <p>My journey in marketing began with a fascination for how brands connect with people on an emotional level. I believe that effective marketing is about building relationships, telling authentic stories, and creating meaningful experiences that resonate with audiences.</p>
+                    <p>Over the years, I've realized that experiences outside the classroom shape who you are just as much as academics do. I danced competitively for 15 years, which taught me discipline, teamwork, and what it means to truly work hard for something you care about. More recently, I studied abroad in Barcelona, where I developed a love for travel and gained a new perspective on the world. Both experiences helped me build confidence, independence, and a strong sense of determination.</p>
+    
+                    <p>I'm passionate about understanding people, finding creative ways to communicate, and using marketing to make an impact. I love that it brings together strategy and imagination, allowing me to approach problems from both an analytical and creative point of view.</p>
                     
-                    <p>Throughout my academic career and professional experiences, I've developed expertise in digital marketing, brand strategy, content creation, and social media management. I'm always eager to learn new skills and stay ahead of industry trends.</p>
-                    
-                    <p>When I'm not crafting marketing campaigns, you can find me exploring new creative outlets, staying active in my community, and continuously seeking inspiration from the world around me.</p>
+                    <p>Outside of school, I enjoy traveling, staying active, and spending time with friends and family. I value experiences that challenge me, teach me something new, and help me grow as a person. As I continue my journey, I hope to build a career where I can bring ideas to life, connect with others, and make a positive difference through creativity and marketing.</p>
                 </div>
                 <div class="about-photo">
-                    [Add a professional photo of yourself here - kelly-lenge-about.jpg]
+                    <img src="img/IMG_5795.jpg" alt="Kelly Lenge" style="width: 320px; height: 420px; object-fit: cover; border-radius: 20px;" />
                 </div>
             </div>
         </div>
@@ -853,53 +862,29 @@
             <p class="blog-intro">Insights, thoughts, and observations on marketing, communications, and professional growth.</p>
 
             <article class="blog-post">
-                <h3>The Future of Digital Marketing: Trends to Watch in 2025</h3>
-                <p class="blog-meta">Posted on October 15, 2025 | Marketing Insights</p>
+                <h3>Traveling</h3>
+                <p class="blog-meta">Posted on November 1, 2025 | Study Abroad</p>
                 <div class="blog-image">[Add blog featured image - digital-marketing-trends.jpg]</div>
-                <p>Digital marketing is evolving at an unprecedented pace, and staying ahead of the curve is essential for any marketing professional. As we navigate through 2025, several key trends are reshaping how brands connect with their audiences and drive meaningful engagement.</p>
+                <p>Before studying abroad, I had never been outside the country. Traveling always seemed exciting, but it was not until I lived in Barcelona that I truly understood how much it could change me. The city’s vibrant energy, incredible food, and slower pace taught me to appreciate each moment instead of rushing to the next thing.</p>
 
-                <p>First and foremost, artificial intelligence and machine learning have become integral to marketing strategy. From predictive analytics that help us understand consumer behavior to AI-powered chatbots that enhance customer service, these technologies are no longer optional—they're essential. I've personally witnessed how AI tools can analyze vast amounts of data in seconds, providing insights that would take humans weeks to uncover. This doesn't mean human creativity is being replaced; rather, it's being amplified. Marketers can now focus on strategy and creative thinking while AI handles the heavy lifting of data analysis and optimization.</p>
+                <p>During that semester, I visited Morocco, Iceland, Switzerland, Florence, Dublin, Lisbon, Budapest, Madrid, Paris, and London. Each trip brought new lessons and fresh perspectives. I learned to adapt quickly, plan ahead, and stay calm when things didn’t go according to plan.</p>
 
-                <p>Personalization has reached new heights. Consumers no longer respond to generic messaging; they expect brands to understand their unique needs, preferences, and behaviors. The brands winning today are those creating hyper-personalized experiences across every touchpoint. This means leveraging data responsibly and ethically to deliver content that resonates on an individual level. In my own work, I've seen how personalized email campaigns can achieve open rates three times higher than generic broadcasts.</p>
+                <p>Traveling on my own also made me more independent. Navigating unfamiliar places and cultures gave me confidence and helped me understand how people around the world live differently while sharing common values of connection, family, and happiness.</p>
 
-                <p>Video content continues to dominate, but the format is evolving. Short-form video on platforms like TikTok and Instagram Reels has changed how we consume content. Brands must adapt by creating authentic, engaging content that captures attention within the first three seconds. The days of polished, overly-produced content are giving way to raw, genuine storytelling that feels human and relatable. This shift has been liberating for marketers—we can be more experimental and authentic without the pressure of perfection.</p>
-
-                <p>Social commerce is transforming the customer journey. The line between social media and e-commerce is blurring, with platforms introducing seamless shopping experiences. Consumers can now discover products, read reviews, and make purchases without ever leaving their favorite social app. This integration requires marketers to rethink their strategies, ensuring that every social post is not just engaging but also shoppable.</p>
-
-                <p>Sustainability and social responsibility have moved from nice-to-have to must-have. Today's consumers, especially Gen Z and Millennials, demand that brands take stands on social issues and demonstrate genuine commitment to sustainability. Marketing messages that ring hollow or appear performative are quickly called out. Authenticity is currency in modern marketing.</p>
-
-                <p>Voice search and smart speakers are changing SEO strategies. With more people using voice assistants, content must be optimized for conversational queries. This means focusing on natural language, question-based content, and local SEO. The way people speak their searches differs significantly from how they type them, requiring a new approach to keyword research and content creation.</p>
-
-                <p>Finally, the metaverse and Web3 technologies are opening new frontiers for marketing. While still emerging, these technologies offer exciting possibilities for immersive brand experiences. Forward-thinking marketers are already experimenting with virtual events, NFTs, and branded experiences in virtual worlds.</p>
-
-                <p>As marketing professionals, our role is to stay curious, keep learning, and be willing to experiment. The trends shaping 2025 aren't just about technology—they're about understanding human behavior, building genuine connections, and creating value for audiences. The future of marketing is bright for those willing to embrace change and put the customer at the center of everything we do.</p>
+                <p>Studying abroad taught me more than any classroom could. It helped me discover more about myself and the world, showing me there is always something new to learn and experience. Now, traveling is a passion I plan to carry with me throughout my life.</p>
             </article>
 
             <article class="blog-post">
-                <h3>Building Your Personal Brand: Lessons from My Journey</h3>
-                <p class="blog-meta">Posted on September 28, 2025 | Career Development</p>
+                <h3>Dancing</h3>
+                <p class="blog-meta">Posted on October 25, 2025 | Personal Growth</p>
                 <div class="blog-image">[Add blog featured image - personal-branding.jpg]</div>
-                <p>Personal branding isn't about creating a fake persona or becoming someone you're not. It's about authentically showcasing who you are, what you stand for, and the unique value you bring to the table. Through my journey as a marketing professional, I've learned that building a strong personal brand is one of the most valuable investments you can make in your career.</p>
+                <p>I started dancing when I was four years old, and it has been a part of my life ever since. What began as a fun activity quickly became something I truly loved. I went on to dance competitively for 15 years, and over that time it shaped me into the person I am today. Dance taught me discipline, focus, and what it really means to work hard for something you care about.</p>
 
-                <p>When I first started thinking about my personal brand, I was overwhelmed. There were so many voices telling me what I should be, how I should present myself, and which platforms I should use. The breakthrough came when I realized that authenticity is the foundation of any successful personal brand. You can't sustain a brand built on pretense—eventually, the facade cracks. Instead, I focused on understanding my core values, strengths, and passions, and building my brand around those authentic elements.</p>
+                <p>I had amazing coaches who pushed me to be my best every single day. We spent around 40 hours a week in the studio practicing, sweating, and sometimes even crying, all working toward the same goal. It was challenging, but it taught me that success does not come without effort. You have to show up, stay consistent, and push through the tough moments to achieve something great.</p>
 
-                <p>One of the first steps in my personal branding journey was defining my unique value proposition. What makes me different from other marketing professionals? What perspective do I bring that others don't? For me, it was the intersection of strategic marketing thinking and strong communication skills. My background in both marketing and communications allows me to see the bigger picture while also crafting compelling narratives. This unique combination became the cornerstone of my personal brand.</p>
+                <p>Through dance, I learned how to handle pressure, how to stay confident, and how to lead by example. Every competition and performance taught me to believe in myself, even when things felt uncertain. Dance built my confidence from a young age and helped me grow into a strong and determined woman.</p>
 
-                <p>Consistency has been crucial. Your personal brand isn't just what you post on LinkedIn or how you present yourself in interviews—it's the sum total of every interaction, every piece of content you create, and every professional relationship you build. I've made it a priority to ensure that my online presence aligns with how I show up in person. This means being thoughtful about what I share on social media, how I engage with others online, and the quality of work I produce.</p>
-
-                <p>Content creation has played a significant role in building my brand. By sharing my insights, experiences, and learnings, I've been able to establish thought leadership in my areas of expertise. This doesn't mean you need to be an expert in everything—in fact, being vulnerable about what you're learning can be just as powerful as showcasing what you know. I've found that people appreciate honesty and genuine curiosity over false expertise.</p>
-
-                <p>Networking authentically has also been transformative. Rather than viewing networking as a transactional activity, I've approached it as relationship-building. I genuinely seek to learn from others, offer help where I can, and build meaningful connections. This mindset shift has led to some of the most valuable relationships in my career. Your network is an extension of your personal brand—the people you associate with and how you treat them says a lot about who you are.</p>
-
-                <p>Visual identity matters more than I initially realized. From the colors I use in my presentations to the style of my professional photos, these visual elements create immediate impressions. I've invested time in developing a cohesive visual identity that reflects my personality—professional yet approachable, creative yet strategic. This visual consistency helps people recognize my work and associate it with quality.</p>
-
-                <p>One challenge I've faced is balancing professionalism with personality. Early on, I was afraid to show too much personality for fear of appearing unprofessional. But I've learned that people connect with people, not corporate robots. Sharing appropriate personal stories, showing enthusiasm for my work, and letting my personality shine through has made my brand more relatable and memorable. The key is finding the right balance for your industry and comfort level.</p>
-
-                <p>Continuous learning and evolution are essential. The marketing landscape changes rapidly, and staying relevant means constantly updating your skills and knowledge. I've made professional development a priority, pursuing certifications, attending conferences, and staying current with industry trends. This commitment to growth is now part of my brand identity—I'm known as someone who stays ahead of the curve.</p>
-
-                <p>Finally, I've learned to measure and refine my personal brand over time. This means paying attention to feedback, analyzing what resonates with my audience, and being willing to adjust my approach. Personal branding isn't set in stone—it evolves as you grow and as your career develops. The brand I'm building today will continue to mature and change, and that's exactly as it should be.</p>
-
-                <p>Building a personal brand is a marathon, not a sprint. It requires patience, authenticity, and consistent effort. But the rewards—increased opportunities, meaningful connections, and a clear professional identity—make it absolutely worth the investment. My advice? Start where you are, be genuine, and don't be afraid to let your unique voice shine through.</p>
+                <p>What I love most about dance is how it lets me express myself. It is a way to communicate without words, to turn emotion into movement. Dance gave me confidence, strength, and purpose, and it continues to remind me that with hard work and passion, anything is possible.</p>
             </article>
 
             <article class="blog-post">
