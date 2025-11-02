@@ -207,8 +207,8 @@
         }
 
         .profile-photo {
-            width: 280px;
-            height: 280px;
+            width: 310px;
+            height: 310px;
             border-radius: 50%;
             border: 6px solid white;
             box-shadow: 0 15px 60px rgba(180, 145, 200, 0.4);
@@ -433,63 +433,52 @@
         }
 
         /* RESUME PAGE */
-        #resume {
+        #resume.page {
             background: white;
+            padding: 8rem 2rem 4rem;
         }
 
-        .resume-section {
-            margin: 3rem 0;
-            padding: 2.5rem;
-            background: linear-gradient(135deg, #FAF8FC, white);
-            border-radius: 20px;
-            border-left: 6px solid var(--lavender);
-            box-shadow: 0 5px 25px rgba(180, 145, 200, 0.15);
-            transition: all 0.3s;
-        }
-
-        .resume-section:hover {
-            transform: translateX(10px);
-            box-shadow: 0 8px 35px rgba(180, 145, 200, 0.25);
-        }
-
-        .resume-item {
-            margin: 2rem 0;
-        }
-
-        .resume-item h4 {
-            font-size: 1.4rem;
-            color: var(--lavender-dark);
-            margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .resume-item .date {
-            color: var(--text-gray);
-            font-style: italic;
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-        }
-
-        .skills {
+        #resume.page.active {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            justify-content: center;
+            align-items: center;
         }
 
-        .skill-tag {
-            background: linear-gradient(135deg, var(--lavender), var(--lavender-dark));
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(180, 145, 200, 0.3);
-            transition: all 0.3s;
+        #resume .resume-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
         }
 
-        .skill-tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(180, 145, 200, 0.5);
+        #resume .resume-image-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        #resume .resume-image {
+            height: calc(134vh - 9rem);
+            max-height: 1100px;
+            width: auto;
+            max-width: min(95vw, 1040px);
+            border-radius: 18px;
+            box-shadow: 0 20px 45px rgba(45, 27, 61, 0.15);
+            border: 3px solid var(--lavender-light);
+        }
+
+        @media (max-width: 768px) {
+            #resume.page {
+                padding: 7rem 1rem 3rem;
+            }
+
+            #resume .resume-image {
+                height: auto;
+                max-width: 100%;
+                border-radius: 14px;
+            }
         }
 
         /* BLOG PAGE */
@@ -691,12 +680,12 @@
         <div class="container">
             <div class="logo" onclick="showPage('home')">Kelly Lenge <span class="sparkle"></span></div>
             <ul>
-                <li><a href="#home" onclick="showPage('home')">Home</a></li>
-                <li><a href="#about" onclick="showPage('about')">About</a></li>
-                <li><a href="#portfolio" onclick="showPage('portfolio')">Portfolio</a></li>
-                <li><a href="#resume" onclick="showPage('resume')">Resume</a></li>
-                <li><a href="#blog" onclick="showPage('blog')">Blog</a></li>
-                <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#home" data-page="home">Home</a></li>
+                <li><a href="#about" data-page="about">About</a></li>
+                <li><a href="#portfolio" data-page="portfolio">Portfolio</a></li>
+                <li><a href="#blog" data-page="blog">Blog</a></li>
+                <li><a href="#resume" data-page="resume">Resume</a></li>
+                <li><a href="#contact" data-page="contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -711,7 +700,7 @@
                 <h1>Kelly Lenge</h1>
                 <p style="font-size: 1.3rem; margin-bottom: 1rem; font-weight: 500;">BBA in Marketing | Minor in Communications</p>
                 
-                <a href="#contact" onclick="showPage('contact')" class="cta-button">Let's Connect!</a>
+                <!-- <a href="#contact" onclick="showPage('contact')" class="cta-button">Let's Connect!</a> -->
                 
                 <div class="social-links">
                     <a href="https://linkedin.com/in/kellylenge" target="_blank" title="LinkedIn" aria-label="LinkedIn profile">
@@ -751,31 +740,31 @@
     <!-- PORTFOLIO PAGE -->
     <div id="portfolio" class="page">
         <div class="container">
-            <h2>My Portfolio ✨</h2>
-            <p class="portfolio-intro">Here's a showcase of my best work in marketing and communications. Each project represents my commitment to creativity, strategy, and results.</p>
-            
+            <h2>My Portfolio</h2>            
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <div class="portfolio-image">[Add project image - marketing-campaign-1.jpg]</div>
+                    <div class="portfolio-image"><img src="img/sipjoy.png" alt="" style="width: 100%; height: auto;"></div>
                     <div class="portfolio-content">
-                        <h3>Social Media Campaign</h3>
-                        <p>Developed and executed a comprehensive social media strategy that increased engagement by 150% and grew follower base significantly. Utilized data analytics to optimize content performance.</p>
+                        <h3>New Beverage Brand Development</h3>
+                        <p>Developed and marketed a new drink concept focused on creative branding and consumer appeal. Designed the product’s identity, packaging, and launch strategy to capture target audience interest.</p>
+                        <a href="https://drive.google.com/file/d/1cVfKGVw731WJhFPxEib35jrSZTielgJZ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
-                    <div class="portfolio-image">[Add project image - branding-project-1.jpg]</div>
+                    <div class="portfolio-image"><img src="img/PNG_Hero-4.png" alt="" style="width: 100%; height: auto;"></div>
                     <div class="portfolio-content">
-                        <h3>Brand Development Project</h3>
-                        <p>Led a complete brand refresh including logo design, brand guidelines, and messaging strategy. Created a cohesive brand identity that resonated with target demographics.</p>
+                        <h3>Programmatic Project</h3>
+                        <p>At WPP Media, I supported client campaigns through DV360, managing programmatic ad placements and tracking performance. I launched and optimized YouTube ad campaigns to increase reach and engagement across target audiences for my client.</p>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
-                    <div class="portfolio-image">[Add project image - content-strategy.jpg]</div>
+                    <div class="portfolio-image"><img src="img/flower.png" alt="" style="width: 100%; height: 230px;"></div>
                     <div class="portfolio-content">
-                        <h3>Content Marketing Strategy</h3>
-                        <p>Designed and implemented a content marketing plan that drove organic traffic and improved conversion rates. Focused on SEO optimization and audience engagement.</p>
+                        <h3>Photography Project</h3>
+                        <p>Created a photo series that explored how natural flaws and irregularities can be beautiful. Focused on capturing texture, color, and real moments in nature to show that imperfection can be inspiring.</p>
+                        <a href="https://docs.google.com/presentation/d/1KhzSq_vARHCELenSsjJZ9UGzEou-xgIu1nvBdXtMsUE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
             </div>
@@ -784,65 +773,10 @@
 
     <!-- RESUME PAGE -->
     <div id="resume" class="page">
-        <div class="container">
-            <h2>Resume / CV 📄</h2>
-            
-            <div class="resume-section">
-                <h3>Education</h3>
-                <div class="resume-item">
-                    <h4>Bachelor of Business Administration (BBA) - Marketing</h4>
-                    <p class="date">[Your University] | [Graduation Year]</p>
-                    <p><strong>Minor in Communications</strong></p>
-                    <p>Relevant Coursework: Digital Marketing, Consumer Behavior, Brand Management, Marketing Analytics, Public Relations, Social Media Strategy, Integrated Marketing Communications</p>
-                </div>
-            </div>
-
-            <div class="resume-section">
-                <h3>Professional Experience</h3>
-                <div class="resume-item">
-                    <h4>Marketing Intern</h4>
-                    <p class="date">[Company Name] | [Dates]</p>
-                    <p>• Assisted in developing and executing marketing campaigns across multiple channels</p>
-                    <p>• Managed social media accounts and created engaging content</p>
-                    <p>• Conducted market research and analyzed consumer insights</p>
-                    <p>• Collaborated with cross-functional teams to achieve marketing objectives</p>
-                </div>
-                <div class="resume-item">
-                    <h4>Communications Assistant</h4>
-                    <p class="date">[Company/Organization] | [Dates]</p>
-                    <p>• Created compelling content for various communication platforms</p>
-                    <p>• Coordinated internal and external communications initiatives</p>
-                    <p>• Supported event planning and promotion efforts</p>
-                    <p>• Maintained brand consistency across all materials</p>
-                </div>
-            </div>
-
-            <div class="resume-section">
-                <h3>Skills</h3>
-                <div class="skills">
-                    <span class="skill-tag">Digital Marketing</span>
-                    <span class="skill-tag">Social Media Management</span>
-                    <span class="skill-tag">Content Creation</span>
-                    <span class="skill-tag">Brand Strategy</span>
-                    <span class="skill-tag">SEO/SEM</span>
-                    <span class="skill-tag">Google Analytics</span>
-                    <span class="skill-tag">Adobe Creative Suite</span>
-                    <span class="skill-tag">Email Marketing</span>
-                    <span class="skill-tag">Market Research</span>
-                    <span class="skill-tag">Public Relations</span>
-                    <span class="skill-tag">Copywriting</span>
-                    <span class="skill-tag">Project Management</span>
-                </div>
-            </div>
-
-            <div class="resume-section">
-                <h3>Certifications & Awards</h3>
-                <div class="resume-item">
-                    <h4>Professional Certifications</h4>
-                    <p>• Google Analytics Certification</p>
-                    <p>• HubSpot Content Marketing Certification</p>
-                    <p>• Facebook Blueprint Certification</p>
-                </div>
+        <div class="container resume-container">
+            <h2>My Resume</h2>
+            <div class="resume-image-wrapper">
+                <img class="resume-image" src="files/resume.png" alt="Kelly Lenge Resume">
             </div>
         </div>
     </div>
@@ -850,7 +784,7 @@
     <!-- BLOG PAGE -->
     <div id="blog" class="page">
         <div class="container">
-            <h2>My Blog 💭</h2>
+            <h2>My Blog</h2>
             <!-- <p class="blog-intro">Insights, thoughts, and observations on marketing, communications, and professional growth.</p> -->
 
             <article class="blog-post">
@@ -890,28 +824,21 @@
             </article>
 
             <article class="blog-post">
-                <h3>Effective Communication in the Digital Age</h3>
-                <!-- <p class="blog-meta">Posted on September 10, 2025 | Communications</p> -->
-                <div class="blog-image">[Add blog featured image - digital-communication.jpg]</div>
-                <p>In our hyper-connected world, communication has never been easier—yet truly effective communication seems increasingly rare. As someone with a background in both marketing and communications, I've spent considerable time thinking about what makes communication effective in the digital age and how we can cut through the noise to create meaningful connections.</p>
+                <h3>Cooking</h3>
+                <!-- <p class="blog-meta">Posted on August 14, 2025 | Personal Passions</p> -->
+                <div class="blog-image gallery">
+                    <img src="img/food1.png" alt="Kelly Lenge smiling in a courtyard">
+                    <img src="img/hummus.png" alt="Kelly Lenge dancing with a partner">
+                    <img src="img/produce.jpeg" alt="Fresh produce on a kitchen counter">
+                    <img src="img/Vmeatball.jpeg" alt="Kelly Lenge dancing in a studio">
+                </div>
+                <p>My love for cooking started pretty recently, but it has quickly become one of my favorite things to do. Growing up, my mom was and still is an amazing cook. Every meal she made brought people together, and I always admired how she made it look so easy while putting so much care into it. From her homemade meatballs and chicken parmesan to her chicken noodle soup, crabcakes, steak, salads, bolongese, and hummus, everything she made had its own special touch. Food was always a big part of our home, and it created memories that I still think about today.</p>
 
-                <p>The paradox of digital communication is that while we have more channels and tools than ever before, we often struggle to be truly heard and understood. We're sending messages constantly—emails, texts, social media posts, instant messages—but are we actually communicating? There's a crucial difference between transmitting information and creating understanding, and that difference has become even more pronounced in the digital realm.</p>
+                <p>I never cooked much myself until I got to college, but once I started, I realized how much I enjoyed it. When I moved away from home, I missed her meals more than I expected. That inspired me to start learning her recipes and trying them on my own. At first, I called her constantly while cooking, asking what I was doing wrong or how to fix something that did not turn out quite right. Over time, I began to understand the rhythm of it, the timing, the flavor, and the patience it takes to make something great.</p>
 
-                <p>One of the biggest challenges in digital communication is the loss of nonverbal cues. When we communicate face-to-face, we rely heavily on body language, facial expressions, and tone of voice to convey meaning and emotion. These cues are largely absent in written digital communication, leading to frequent misunderstandings. I've learned to compensate for this by being more intentional with my word choices, using formatting to add emphasis, and sometimes opting for video calls when nuance is important. An emoji here and there doesn't hurt either—they serve as our digital body language.</p>
+                <p>Cooking has become something that relaxes me. It gives me time to slow down, focus, and create something from scratch. I love the feeling of finishing a meal and knowing I made it myself. It reminds me of home and all the memories that come with it.</p>
 
-                <p>Clarity has become my guiding principle in digital communication. In a world where everyone is overwhelmed with information, getting to the point quickly and clearly is respectful of others' time and attention. This doesn't mean being blunt or impersonal—it means being thoughtful about what you're communicating and how you structure your message. I've adopted a "bottom line up front" approach for most professional communications, stating the main point or call to action early, then providing supporting details for those who need them.</p>
-
-                <p>The medium matters tremendously. Each communication channel has its own norms, expectations, and appropriate use cases. Email is great for formal communication and when you need a paper trail. Instant messaging works well for quick questions and team coordination. Social media is ideal for broad announcements and community engagement. Video calls excel at nuanced discussions and relationship building. Understanding which medium to use for which message is a crucial skill that many people overlook.</p>
-
-                <p>Active listening—or rather, active reading—is just as important in digital communication as it is in person. Too often, we skim messages quickly, formulate our response before fully understanding the question, and miss important context. I've made it a practice to read carefully, consider the sender's perspective, and sometimes wait before responding to ensure I'm addressing what was actually asked rather than what I assumed was being asked.</p>
-
-                <p>Timing and frequency also play significant roles in effective digital communication. Sending too many messages can overwhelm recipients and lead to important information being missed. Sending too few can leave people feeling out of the loop. I've learned to batch related information together, use subject lines and headings effectively, and be strategic about when I send messages. A thoughtfully timed message can have far more impact than multiple poorly timed ones.</p>
-
-                <p>Cultural sensitivity has become more important as digital communication has made our world smaller. We're regularly communicating with people from different cultures, time zones, and backgrounds. What's considered direct and efficient in one culture might be seen as rude in another. I've learned to adapt my communication style based on my audience, be patient with language barriers, and always assume positive intent when messages feel unclear or abrupt.</p>
-
-                <p>Perhaps most importantly, I've learned that effective digital communication requires empathy. Behind every screen is a real person with their own context, challenges, and emotions. Taking a moment to consider how your message will be received, acknowledging others' perspectives, and communicating with kindness and respect can transform your digital interactions from transactional to meaningful.</p>
-
-                <p>The digital age hasn't made communication easier—it's made it more complex. But by being intentional, clear, empathetic, and strategic in how we communicate, we can harness the power of digital tools to build stronger relationships, collaborate more effectively, and create genuine understanding. Communication is at the heart of everything we do professionally and personally, and mastering it in the digital realm is one of the most valuable skills we can develop.</p>
+                <p>What I love most about cooking is that it is always a learning process. There is always a new recipe to try or a new flavor to explore. It makes me feel creative, independent, and connected to something familiar at the same time.</p>
             </article>
         </div>
     </div>
@@ -919,7 +846,7 @@
     <!-- CONTACT PAGE -->
     <div id="contact" class="page">
         <div class="container">
-            <h2>Let's Connect 💌</h2>
+            <h2>Let's Connect</h2>
             <p style="font-size: 1.2rem; margin: 2rem 0;">I'm always excited to connect with fellow marketing professionals, potential collaborators, and anyone interested in discussing marketing and communications!</p>
             
             <div class="contact-info">
@@ -940,7 +867,7 @@
             </div> -->
 
             <div class="follow-section">
-                <h3>Follow My Journey ✨</h3>
+                <h3>Follow My Journey</h3>
                 <p style="color: var(--text-gray);">Stay updated with my latest projects, insights, and professional adventures on LinkedIn.</p>
                 <div class="social-links" style="margin-top: 1.5rem;">
                     <a href="https://linkedin.com/in/kellylenge" target="_blank" title="LinkedIn" aria-label="LinkedIn profile">
@@ -979,12 +906,14 @@
             }
         });
 
-        // Update URL hash when page changes
-        document.querySelectorAll('nav a').forEach(link => {
+        // Handle navigation clicks
+        document.querySelectorAll('nav a[data-page]').forEach(link => {
             link.addEventListener('click', (e) => {
-                const href = e.target.getAttribute('href');
-                if (href && href.startsWith('#')) {
-                    window.location.hash = href;
+                e.preventDefault();
+                const pageId = link.dataset.page;
+                if (pageId) {
+                    showPage(pageId);
+                    window.location.hash = pageId;
                 }
             });
         });
