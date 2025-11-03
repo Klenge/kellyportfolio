@@ -285,19 +285,49 @@ h3 {
     box-shadow: 0 8px 30px rgba(180, 145, 200, 0.5);
 }
 
+.video-section {
+    max-width: 610px;
+    margin: 3rem auto;
+    text-align: left;
+}
+
+.video-section h3 {
+    margin-bottom: 0.75rem;
+    text-align: left;
+}
+
 .video-container {
-    margin: 3rem 0;
+    /* centers block horizontally on the page / inside its parent */
+    margin: 0;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 15px 50px rgba(180, 145, 200, 0.3);
     background: var(--lavender-light);
-    height: 450px;
+    width: 610px;
+    height: 360px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-size: 1.1rem;
     border: 5px solid white;
+    position: relative; /* keeps it positioned for internal absolute children if needed */
+}
+
+/* If you need the .video-container centered on top of an image (overlay),
+   wrap the image and video in a parent with position: relative; then use this class:
+   .parent { position: relative; }
+   <div class="parent">
+     <img ...>
+     <div class="video-container overlay">...</div>
+   </div>
+*/
+.video-container.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0; /* reset margin when using absolute centering */
 }
 
 /* ABOUT PAGE */
