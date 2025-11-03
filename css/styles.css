@@ -312,6 +312,15 @@ h3 {
     font-size: 1.1rem;
     border: 5px solid white;
     position: relative; /* keeps it positioned for internal absolute children if needed */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 /* If you need the .video-container centered on top of an image (overlay),
